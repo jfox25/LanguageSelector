@@ -86,6 +86,7 @@ $(document).ready(function () {
       $(parent).addClass("hidden");
       $(nextElement).removeClass("hidden");
     });
+
   $("#restart-survey").click(function () {
     const parent = $(this).parent();
     surveyQuestion1 = "";
@@ -135,5 +136,25 @@ $(document).ready(function () {
       $(".link-dark").removeClass("link-light");
       darkMode = true;
     }
+  });
+
+  $("#contact-form").submit(function (event) {
+    event.preventDefault();
+    const name = $("#name-input").val();
+    const email = $("#email-input").val();
+    const language = $("#language-input").val();
+
+    const result =
+      "<p> Thanks " +
+      name +
+      " we will contact you shortly at " +
+      email +
+      ", to help you with all your " +
+      language +
+      " programming needs!";
+    $(this).addClass("hidden");
+    console.log(result);
+    $("#contact-output").append(result);
+    $("#contact-output").removeClass("hidden");
   });
 });
