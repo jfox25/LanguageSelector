@@ -22,10 +22,10 @@
           <button class="btn btn-light">Start</button>
         </div>
         <div id="q1-survey" class="survey-section hidden">
-          <p>What do you prefer Mac or Windows?</p>
+          <p>What do you prefer Apple or Microsoft?</p>
           <select id="q1-input">
             <option value="a">I only rock Mac</option>
-            <option value="b">Windows is the only correct answer</option>
+            <option value="b">Microsoft is the only correct answer</option>
             <option value="c">Don't really care</option>
           </select>
           <button class="btn btn-light">Next</button>
@@ -80,6 +80,29 @@
         <div id="survey-output" class="survey-finish hidden">
           <button id="restart-survey" class="btn btn-light">Restart</button>
         </div>
+      </div>
+      <div class="contact">
+        <h2>Need more help learning a Language?</h2>
+        <p>Contact us for more information!</p>
+        <form id="contact-form" class="form">
+          <div class="form-group">
+            <label for="name-input">Name: </label>
+            <input id="name-input" type="text" />
+          </div>
+          <div class="form-group">
+            <label for="name-input">Email: </label>
+            <input id="name-input" type="text" />
+          </div>
+          <div class="form-group">
+            <label for="name-input">Language: </label>
+            <select id="language-input">
+              <option value="">Swift</option>
+              <option value="">C#</option>
+              <option value="">Ruby on Rails</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-light">Submit</button>
+        </form>
       </div>
     </div>
   </body>

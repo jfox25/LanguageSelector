@@ -61,7 +61,7 @@ body {
 }
 
 select {
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   padding: 5px;
 }
@@ -135,4 +135,23 @@ select {
 }
 .hidden {
   display: none;
+}
+
+.contact {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.contact p {
+  font-size: 20px;
+}
+.form {
+  font-size: 20px;
+}
+.form input {
+  font-size: 15px;
+  padding: 5px;
+}
+.form-group {
+  margin-top: 10px;
 }
