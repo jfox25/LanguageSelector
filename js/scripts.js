@@ -27,9 +27,9 @@ $(document).ready(function () {
   $(".survey-finish")
     .children("button")
     .click(function () {
-      let swiftCount;
-      let csharpCount;
-      let rubyCount;
+      let swiftCount = 0;
+      let csharpCount = 0;
+      let rubyCount = 0;
       let result;
       const answerArray = [
         surveyQuestion1,
@@ -39,6 +39,22 @@ $(document).ready(function () {
         surveyQuestion5,
       ];
       console.log(answerArray);
-      for (let i = 0; i < answerArray.length; i++) {}
+      for (let i = 0; i < answerArray.length; i++) {
+        if (answerArray[i] === "a") {
+          swiftCount++;
+        } else if (answerArray[i] === "b") {
+          csharpCount++;
+        } else {
+          rubyCount++;
+        }
+      }
+      if (swiftCount > csharpCount && swiftCount >= rubyCount) {
+        result = "Swift";
+      } else if (csharpCount >= swiftCount && csharpCount >= rubyCount) {
+        result = "C#";
+      } else {
+        result = "Ruby on Rails";
+      }
+      console.log(result);
     });
 });
