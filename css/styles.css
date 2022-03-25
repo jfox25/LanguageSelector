@@ -6,3 +6,48 @@
   --dark-main-color: #c41e3a;
   --dark-accent-color: #696969;
 }
+
+body {
+  font-size: 16px;
+  line-height: 1.7rem;
+}
+.light-body {
+  background-color: var(--light-bg-color);
+  color: var(--light-main-color);
+}
+.dark-body {
+  background-color: var(--dark-bg-color);
+  color: var(--dark-main-color);
+}
+.container {
+  width: 90%;
+}
+#heading {
+  text-align: center;
+}
+#heading p {
+  font-size: 20px;
+}
+#heading h1 {
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+#theme-button {
+  float: right;
+  border-radius: 50%;
+  border: none;
+  padding: 10px;
+}
+#theme-button:hover {
+  cursor: pointer;
+  transition: 0.3s;
+}
+#theme-button img {
+  width: 43px;
+}
+.theme-btn-light {
+  background-color: var(--light-bg-color);
+}
+.theme-btn-light:hover {
+  background-color: var(--light-accent-color);
+}
