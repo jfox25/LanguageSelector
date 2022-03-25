@@ -27,6 +27,13 @@ $(document).ready(function () {
   $(".survey-finish")
     .children("button")
     .click(function () {
+      const swiftDocElement =
+        "<a href='https://www.swift.org/documentation/' target='_blank'>Checkout the Docs</a>";
+      const csharpDocElement =
+        "<a href='https://docs.microsoft.com/en-us/dotnet/csharp/' target='_blank'>Checkout the Docs</a>";
+      const rubyDocElement =
+        "<a href='https://guides.rubyonrails.org/' target='_blank'>Checkout the Docs</a>";
+      let docElement;
       let swiftCount = 0;
       let csharpCount = 0;
       let rubyCount = 0;
@@ -38,7 +45,6 @@ $(document).ready(function () {
         surveyQuestion4,
         surveyQuestion5,
       ];
-      console.log(answerArray);
       for (let i = 0; i < answerArray.length; i++) {
         if (answerArray[i] === "a") {
           swiftCount++;
@@ -50,11 +56,21 @@ $(document).ready(function () {
       }
       if (swiftCount > csharpCount && swiftCount >= rubyCount) {
         result = "Swift";
+        docElement = swiftDocElement;
       } else if (csharpCount >= swiftCount && csharpCount >= rubyCount) {
         result = "C#";
+        docElement = csharpDocElement;
       } else {
         result = "Ruby on Rails";
+        docElement = rubyDocElement;
       }
-      console.log(result);
+      const resultElement = "<h3>" + result + "</h3>";
+      $("#survey-output").append("<p>You should try:</p>");
+      $("#survey-output").append(resultElement);
+      $("#survey-output").append(docElement);
+      const parent = $(this).parent();
+      const nextElement = parent.next("div");
+      $(parent).addClass("hidden");
+      $(nextElement).removeClass("hidden");
     });
 });

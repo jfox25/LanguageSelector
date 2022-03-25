@@ -2,7 +2,7 @@
   --light-bg-color: #f8f8ff;
   --light-main-color: #36454f;
   --light-accent-color: #7393b3;
-  --dark-bg-color: #00040d;
+  --dark-bg-color: #333;
   --dark-main-color: #c41e3a;
   --dark-accent-color: #696969;
 }
@@ -17,7 +17,7 @@ body {
 }
 .dark-body {
   background-color: var(--dark-bg-color);
-  color: var(--dark-main-color);
+  color: whitesmoke;
 }
 .container {
   width: 90%;
@@ -60,11 +60,23 @@ body {
   background-color: var(--dark-accent-color);
 }
 
+select {
+  font-size: 20px;
+  text-align: center;
+  padding: 5px;
+}
 #survey-questions {
   max-width: 800px;
   margin: auto;
   margin-top: 30px;
   font-size: 25px;
+}
+#survey-questions div a {
+  text-decoration: underline;
+  color: inherit;
+}
+#survey-questions div h3 {
+  font-size: 45px;
 }
 .survey-section {
   height: 300px;
