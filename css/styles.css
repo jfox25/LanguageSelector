@@ -21,6 +21,8 @@ body {
 }
 .container {
   width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 #heading {
   text-align: center;
@@ -50,4 +52,56 @@ body {
 }
 .theme-btn-light:hover {
   background-color: var(--light-accent-color);
+}
+.theme-btn-dark {
+  background-color: var(--dark-bg-color);
+}
+.theme-btn-dark:hover {
+  background-color: var(--dark-accent-color);
+}
+
+#survey-questions {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 30px;
+  font-size: 25px;
+}
+.survey-section {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.survey-light {
+  border: 5px solid var(--light-accent-color);
+  border-radius: 5%;
+}
+.survey-dark {
+  border: 5px solid var(--dark-accent-color);
+  border-radius: 5%;
+}
+.btn {
+  margin-top: 20px;
+  padding: 7px 15px;
+  font-size: 19px;
+  border: 3px solid transparent;
+  border-radius: 5%;
+}
+.btn-light {
+  background-color: var(--light-accent-color);
+}
+.btn-light:hover {
+  cursor: pointer;
+  border: 3px solid var(--light-main-color);
+}
+.btn-dark {
+  background-color: var(--dark-accent-color);
+}
+.btn-dark:hover {
+  cursor: pointer;
+  border: 3px solid var(--dark-main-color);
+}
+.hidden {
+  display: none;
 }
