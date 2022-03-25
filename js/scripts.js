@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  let darkMode = false;
   let surveyQuestion1;
   let surveyQuestion2;
   let surveyQuestion3;
@@ -27,12 +28,24 @@ $(document).ready(function () {
   $(".survey-finish")
     .children("button")
     .click(function () {
+      let linkClass;
+      if (darkMode) {
+        linkClass = "class = 'link-dark'";
+      } else {
+        linkClass = "class = 'link-light'";
+      }
       const swiftDocElement =
-        "<a href='https://www.swift.org/documentation/' target='_blank'>Checkout the Docs</a>";
+        "<a " +
+        linkClass +
+        " href='https://www.swift.org/documentation/' target='_blank'>Checkout the Docs</a>";
       const csharpDocElement =
-        "<a href='https://docs.microsoft.com/en-us/dotnet/csharp/' target='_blank'>Checkout the Docs</a>";
+        "<a " +
+        linkClass +
+        " href='https://docs.microsoft.com/en-us/dotnet/csharp/' target='_blank'>Checkout the Docs</a>";
       const rubyDocElement =
-        "<a href='https://guides.rubyonrails.org/' target='_blank'>Checkout the Docs</a>";
+        "<a " +
+        linkClass +
+        " href='https://guides.rubyonrails.org/' target='_blank'>Checkout the Docs</a>";
       let docElement;
       let swiftCount = 0;
       let csharpCount = 0;
@@ -73,4 +86,36 @@ $(document).ready(function () {
       $(parent).addClass("hidden");
       $(nextElement).removeClass("hidden");
     });
+
+  $("#theme-button").click(function () {
+    if (darkMode) {
+      $("body").removeClass("dark-body");
+      $("body").addClass("light-body");
+      $(this).removeClass("theme-btn-dark");
+      $(this).addClass("theme-btn-light");
+      $(this).text("");
+      $(this).append("<img src='images/moon.png' alt='icon of a moon' />");
+      $("#survey-questions").removeClass("survey-dark");
+      $("#survey-questions").addClass("survey-light");
+      $(".btn").removeClass("btn-dark");
+      $(".btn").addClass("btn-light");
+      $(".link-dark").addClass("link-light");
+      $(".link-light").removeClass("link-dark");
+      darkMode = false;
+    } else {
+      $("body").removeClass("light-body");
+      $("body").addClass("dark-body");
+      $(this).removeClass("theme-btn-light");
+      $(this).addClass("theme-btn-dark");
+      $(this).text("");
+      $(this).append("<img src='images/sun.png' alt='icon of a sun' />");
+      $("#survey-questions").removeClass("survey-light");
+      $("#survey-questions").addClass("survey-dark");
+      $(".btn").removeClass("btn-light");
+      $(".btn").addClass("btn-dark");
+      $(".link-light").addClass("link-dark");
+      $(".link-dark").removeClass("link-light");
+      darkMode = true;
+    }
+  });
 });

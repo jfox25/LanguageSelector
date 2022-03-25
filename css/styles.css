@@ -73,7 +73,12 @@ select {
 }
 #survey-questions div a {
   text-decoration: underline;
-  color: inherit;
+}
+.link-light {
+  color: var(--light-main-color);
+}
+.link-dark {
+  color: whitesmoke;
 }
 #survey-questions div h3 {
   font-size: 45px;
