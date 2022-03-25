@@ -26,7 +26,7 @@ $(document).ready(function () {
     });
 
   $(".survey-finish")
-    .children("button")
+    .children("button#finish-survey")
     .click(function () {
       let linkClass;
       if (darkMode) {
@@ -78,14 +78,32 @@ $(document).ready(function () {
         docElement = rubyDocElement;
       }
       const resultElement = "<h3>" + result + "</h3>";
-      $("#survey-output").append("<p>You should try:</p>");
-      $("#survey-output").append(resultElement);
-      $("#survey-output").append(docElement);
+      $("#survey-output").prepend(docElement);
+      $("#survey-output").prepend(resultElement);
+      $("#survey-output").prepend("<p>You should try:</p>");
       const parent = $(this).parent();
       const nextElement = parent.next("div");
       $(parent).addClass("hidden");
       $(nextElement).removeClass("hidden");
     });
+  $("#restart-survey").click(function () {
+    const parent = $(this).parent();
+    surveyQuestion1 = "";
+    surveyQuestion2 = "";
+    surveyQuestion3 = "";
+    surveyQuestion4 = "";
+    surveyQuestion5 = "";
+    $("#q1-input").val("a");
+    $("#q2-input").val("a");
+    $("#q3-input").val("a");
+    $("#q4-input").val("a");
+    $("#q5-input").val("a");
+    $(parent).children("p").remove();
+    $(parent).children("a").remove();
+    $(parent).children("h3").remove();
+    $(parent).addClass("hidden");
+    $("#q1-survey").removeClass("hidden");
+  });
 
   $("#theme-button").click(function () {
     if (darkMode) {
